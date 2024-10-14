@@ -12,7 +12,7 @@
     <div class="action-container">
         <button type="button" class="btn-action" onclick="handaleTextOps('uppercase')">uppercase</button>
         <button type="button" class="btn-action" onclick="handaleTextOps('lowercase')">lowercase</button>
-        <button type="button" class="btn-action" onclick="handaleTextOps('wordcount')">word-count</button>
+        <button type="button" class="btn-action" onclick="handaleTextOps('worldcount')">world-count</button>
         <button type="button" class="btn-action" onclick="handaleTextOps('charcount')">charcter count</button>
     </div>
     <script>
@@ -20,6 +20,21 @@
             const inputElement=document.getElementById("input");
             const outputElement=document.getElementById("output");
 
+            switch(op){
+                case "uppercase":
+                    outputElement.value=inputElement.value.touppercase();
+                    break;
+                case "lowercase":
+                    outputElement.value=inputElement.value.tolowercase();
+                    break;
+                 case "worldcount":
+                    const totalworld=inputElement.value.split("").length;
+                    outputElement.value=inputElement.value=`worldcount:${totalworld}`;
+                    break;
+                case "charcount":
+                    outputElement.value=`charcter count:${inputElement.value.length}`;
+                    break;        
+            }
         }
     </script>
 </body>
