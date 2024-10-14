@@ -14,40 +14,41 @@
             text-align: center;
         }
         .textbox{
-            width: 70%;
+            width: 600px;
             display: block;
-            margin: 20px auto;
+            margin: 18px auto;
             min-height: 100px;
-            border-radius: 5px;
+            border-radius: 3px;
         }
         .action-container{
             display: flex;
             justify-content:center;
-            width: 70px;
+            width: 50px;
             margin: 20px auto;
         }
         .btn-action{
             width: 150px;
             padding: 8px 15px;
             font-size: 15px;
-            border-radius: 30px;
             border: none;
             background-color: burlywood;
             color: chocolate;
             cursor: pointer;
             margin-top: 20px;
+            margin: 2px;
         }
         .btn-action:hover{
             transition: 0.35;
             background-color: lightcoral;
             box-shadow: 2 2 20px 1px;
+            border-radius: 2px 12px;
         }
     </style>
 </head>
 <body>
     <h1 class="text-center">Oprations</h1>
-    <input type="text" id="input" class="textbox" placeholder="Enter the text to perform oprations"/>
-    <input type="text" id="output" class="textbox" placeholder="output will be displased here"/>
+    <input type="text" id="input" class="textbox" placeholder="Enter the text "/>
+    <input type="text" id="output" class="textbox" placeholder="output here"/>
     <div class="action-container">
         <button type="button" class="btn-action" onclick="handaleTextOps('uppercase')">uppercase</button>
         <button type="button" class="btn-action" onclick="handaleTextOps('lowercase')">lowercase</button>
