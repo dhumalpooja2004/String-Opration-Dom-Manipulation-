@@ -4,38 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>String Oprations</title>
+    <style>
+        body{
+            background-color: bisque;
+            margin: 0px;
+            padding: 0px;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .textbox{
+            width: 70%;
+            display: block;
+            margin: 20px auto;
+            min-height: 100px;
+            border-radius: 5px;
+        }
+        .action-container{
+            display: flex;
+            justify-content:center;
+            width: 70px;
+            margin: 20px auto;
+        }
+        .btn-action{
+            width: 150px;
+            padding: 8px 15px;
+            font-size: 15px;
+            border-radius: 30px;
+            border: none;
+            background-color: burlywood;
+            color: chocolate;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn-action:hover{
+            transition: 0.35;
+            background-color: lightcoral;
+            box-shadow: 2 2 20px 1px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Oprations</h1>
+    <h1 class="text-center">Oprations</h1>
     <input type="text" id="input" class="textbox" placeholder="Enter the text to perform oprations"/>
     <input type="text" id="output" class="textbox" placeholder="output will be displased here"/>
     <div class="action-container">
         <button type="button" class="btn-action" onclick="handaleTextOps('uppercase')">uppercase</button>
         <button type="button" class="btn-action" onclick="handaleTextOps('lowercase')">lowercase</button>
-        <button type="button" class="btn-action" onclick="handaleTextOps('worldcount')">world-count</button>
+        <button type="button" class="btn-action" onclick="handaleTextOps('wordcount')">world-count</button>
         <button type="button" class="btn-action" onclick="handaleTextOps('charcount')">charcter count</button>
     </div>
     <script>
-        function handaleTextOps(op){
-            const inputElement=document.getElementById("input");
-            const outputElement=document.getElementById("output");
-
-            switch(op){
-                case "uppercase":
-                    outputElement.value=inputElement.value.touppercase();
-                    break;
-                case "lowercase":
-                    outputElement.value=inputElement.value.tolowercase();
-                    break;
-                 case "worldcount":
-                    const totalworld=inputElement.value.split("").length;
-                    outputElement.value=inputElement.value=`worldcount:${totalworld}`;
-                    break;
-                case "charcount":
-                    outputElement.value=`charcter count:${inputElement.value.length}`;
-                    break;        
-            }
+        
+    function handaleTextOps(op){
+        const inputElement=document.getElementById("input");
+        const outputElement=document.getElementById("output");
+        
+        if(op=="uppercase"){
+            outputElement.value=inputElement.value.toUpperCase();
         }
+        else if(op=="lowercase"){
+            outputElement.value=inputElement.value.toLowerCase();
+        }
+        else if(op=="wordcount"){
+            const totalwords=inputElement.value.split("").length;
+            outputElement.value=`wordcount:${totalwords}`;
+        }
+        else if(op=="charcount"){
+            outputElement.value=`charcter count:${inputElement.value.length}`;
+        }
+                
+    }
+
     </script>
 </body>
 </html>
